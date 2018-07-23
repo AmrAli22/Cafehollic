@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class CafeDetailsViewController: UIViewController , UITableViewDelegate ,UITableViewDataSource{
     
-    var cafe: Cafe = Cafe()
+    var cafe: Cafe!
+    
     
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var LblCafeType: UILabel!
@@ -34,8 +36,12 @@ class CafeDetailsViewController: UIViewController , UITableViewDelegate ,UITable
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,14 +61,37 @@ class CafeDetailsViewController: UIViewController , UITableViewDelegate ,UITable
             case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CafeDescCell", for: indexPath) as! CafeDescribtionTableViewCell
             cell.LblCafeDesc.text = cafe.description
+            return cell
             
+            case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HowToGetCell", for: indexPath) as! HowToGeTableViewCell
+            cell.LblHowToget.text = "How To Get there"
+            return cell
+            
+            case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell", for: indexPath) as! MapTableViewCell
+
+            cell.configure(Location: cafe.location)
+           // var CafeAnnon : MKPointAnnotation! = cell.CafeAnnotation
+           // cell.CafeAnnotation = self.CafeAnnon
             return cell
             default:
             fatalError("Failed to instantiate the table view cell for detail view controller")
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ShowBigMapSegue" {
+            
+                let destinationController = segue.destination as! FullMapViewController
+                destinationController.cafe = cafe
+           // destinationController.cafeAnnontaion =  self.CafeAnnon!
+        }
     
+    }
 
     /*
     // MARK: - Navigation

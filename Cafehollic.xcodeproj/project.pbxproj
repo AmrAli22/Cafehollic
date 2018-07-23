@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160F197D2104FA1100B1DEA3 /* HowToGeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F197C2104FA1100B1DEA3 /* HowToGeTableViewCell.swift */; };
+		160F197F210510C800B1DEA3 /* FullMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F197E210510C800B1DEA3 /* FullMapViewController.swift */; };
 		162EED382103F54C00455FCF /* CafeDetailsWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162EED372103F54C00455FCF /* CafeDetailsWithImageTableViewCell.swift */; };
 		162EED3A2103F59200455FCF /* CafeDescribtionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162EED392103F59200455FCF /* CafeDescribtionTableViewCell.swift */; };
+		165D582A2104E4700079E564 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D58292104E4700079E564 /* MapTableViewCell.swift */; };
+		165D582D2104E4EB0079E564 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165D582C2104E4EB0079E564 /* MapKit.framework */; };
 		16DF584B21039D6F002331A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF584A21039D6F002331A6 /* AppDelegate.swift */; };
 		16DF585021039D6F002331A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16DF584E21039D6F002331A6 /* Main.storyboard */; };
 		16DF585221039D6F002331A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16DF585121039D6F002331A6 /* Assets.xcassets */; };
@@ -20,8 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		160F197C2104FA1100B1DEA3 /* HowToGeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToGeTableViewCell.swift; sourceTree = "<group>"; };
+		160F197E210510C800B1DEA3 /* FullMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMapViewController.swift; sourceTree = "<group>"; };
 		162EED372103F54C00455FCF /* CafeDetailsWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailsWithImageTableViewCell.swift; sourceTree = "<group>"; };
 		162EED392103F59200455FCF /* CafeDescribtionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDescribtionTableViewCell.swift; sourceTree = "<group>"; };
+		165D58292104E4700079E564 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		165D582C2104E4EB0079E564 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		16DF584721039D6E002331A6 /* Cafehollic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cafehollic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DF584A21039D6F002331A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16DF584F21039D6F002331A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,17 +47,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165D582D2104E4EB0079E564 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		165D582B2104E4EB0079E564 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				165D582C2104E4EB0079E564 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		16DF583E21039D6E002331A6 = {
 			isa = PBXGroup;
 			children = (
 				16DF584921039D6E002331A6 /* Cafehollic */,
 				16DF584821039D6E002331A6 /* Products */,
+				165D582B2104E4EB0079E564 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +99,8 @@
 				16DF585E2103A1B8002331A6 /* CafeTableViewCell.swift */,
 				162EED372103F54C00455FCF /* CafeDetailsWithImageTableViewCell.swift */,
 				162EED392103F59200455FCF /* CafeDescribtionTableViewCell.swift */,
+				165D58292104E4700079E564 /* MapTableViewCell.swift */,
+				160F197C2104FA1100B1DEA3 /* HowToGeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,6 +118,7 @@
 			children = (
 				16DF585C21039E5F002331A6 /* CafesTableViewController.swift */,
 				16DF58662103C1FA002331A6 /* CafeDetailsViewController.swift */,
+				160F197E210510C800B1DEA3 /* FullMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +165,11 @@
 					16DF584621039D6E002331A6 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -185,7 +211,10 @@
 			files = (
 				16DF58652103A81F002331A6 /* Cafe.swift in Sources */,
 				162EED382103F54C00455FCF /* CafeDetailsWithImageTableViewCell.swift in Sources */,
+				165D582A2104E4700079E564 /* MapTableViewCell.swift in Sources */,
 				162EED3A2103F59200455FCF /* CafeDescribtionTableViewCell.swift in Sources */,
+				160F197F210510C800B1DEA3 /* FullMapViewController.swift in Sources */,
+				160F197D2104FA1100B1DEA3 /* HowToGeTableViewCell.swift in Sources */,
 				16DF58672103C1FA002331A6 /* CafeDetailsViewController.swift in Sources */,
 				16DF585F2103A1B8002331A6 /* CafeTableViewCell.swift in Sources */,
 				16DF585D21039E5F002331A6 /* CafesTableViewController.swift in Sources */,
